@@ -1,0 +1,53 @@
+<section class="post-detail v-category-tech">
+    <thread-hero thread="thread"></thread-hero>
+    <section class="post-detail--body" data-reactid=".2.1">
+        <section class="post-detail--body--content" data-reactid=".2.1.1">
+            <main data-reactid=".2.1.1.0">
+                <noscript data-reactid=".2.1.1.0.0"></noscript>
+                <noscript data-reactid=".2.1.1.0.1"></noscript>
+
+                <div id="discussion" data-reactid=".2.1.1.0.4">
+                    
+                    <div class="thread-message">
+                        <span class="user-image">
+                            <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
+                        </span>
+                        {{thread.message[language]}}
+                    </div>
+                    <div>
+                        <textarea class="new-reply" ng-model="threadComment"></textarea>
+                        <section class="post-detail--header--get-it-button">
+                            <div class="post-get-it-button new-reply-button">
+                                <a class="post-get-it-button--primary" target="_blank" ng-click="saveComment()">Save</a>
+                            </div>
+                        </section>
+                    </div>
+
+
+                    <div data-reactid=".2.1.1.0.4.0">
+                        <section class="section comments--discussion" data-reactid=".2.1.1.0.4.0.0">
+                            <h3 class="section--heading" data-reactid=".2.1.1.0.4.0.0.0">discussion</h3>
+                            <div data-reactid=".2.1.1.0.4.0.0.1">
+                                <div class="comments--discussion--threads" data-reactid=".2.1.1.0.4.0.0.1.1">
+                                    <a data-reactid=".2.1.1.0.4.0.0.1.1.0" href="#" class="dropdown-toggle">
+                                        <span data-reactid=".2.1.1.0.4.0.0.1.1.0.0">most upvoted</span>
+                                        <span data-reactid=".2.1.1.0.4.0.0.1.1.0.1" class="dropdown-toggle--arrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 5" height="5" width="8">
+                                                <path fill-rule="evenodd" fill="#A8ACB3" d="M6.752 1.514C7.472.678 7.158 0 6.057 0H1.052C-.05 0-.332.654.426 1.46L2.38 3.54c.758.806 1.952.786 2.674-.054l1.698-1.972z"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <div data-reactid=".2.1.1.0.4.0.0.1.1.1">
+                                        <div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056">
+                                            <comment-display ng-repeat="response in thread.responses" comment="response"></comment-display>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </section>                                    
+</section>

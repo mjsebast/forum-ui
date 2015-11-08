@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<head>
+	  	<title>Linguo</title>
+	  	<link rel="stylesheet" media="all" href="assets/css/app.css">
+	  	<link rel="stylesheet" media="all" href="assets/css/thread.css">
+
+	  	<script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <script src="app/app.js"></script>
+        <script src="app/views/forum/ForumCtrl.js"></script>
+        <script src="app/views/thread/ThreadCtrl.js"></script>
+        <script src="app/services/ForumService.js"></script>
+        <script src="app/services/ThreadService.js"></script>
+        <script src="app/services/LanguageService.js"></script>
+        <script src="app/directives/thread-summary/thread-summary.js"></script>
+        <script src="app/directives/thread-hero/thread-hero.js"></script>
+        <script src="app/directives/navigation-header/navigation-header.js"></script>
+        <script src="app/directives/comment-display/comment-display.js"></script>
+        <script src="app/directives/child-response/child-response.js"></script>
+	</head>
+
+	<body class="categories-posts-index m-user-is-guest m-user-settings--thumbnails-enabled" ng-app="linguo">
+		<navigation-header></navigation-header>
+	  	
+	  	<main class="page-main">
+		    <div class="main-content">
+		    	<div ng-view></div>
+		    </div>
+	  	</main>
+	  	
+	</body>
+</html>

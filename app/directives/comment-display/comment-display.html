@@ -1,0 +1,55 @@
+<div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0" id="comment-168056" class="comments--item">
+    <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.0" data-popover-position="top-center" class="user-image comments--item--user-image">
+        <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.0.0" class="user-image">
+            <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.2.0.0.1" ng-click="changeLanguage()"/>
+        </span>
+    </a>
+    <div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.1" class="comments--item--heading">
+        <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.1.0" class="comments--item--heading--name">Chris Oliver</span>
+        <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.1.1" class="comments--item--heading--title">
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.1.1.0">&mdash; </span>
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.1.1.1">Founder, GoRails.com</span>
+        </span>
+    </div>
+    <div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.2" class="comments--item--body">
+        {{comment.comment[language]}}
+    </div>
+    <div class="comments--item--actions">
+        <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.0" href="#" data-popover-href="/comments/168056/votes" 
+        data-popover="hover" class="comments--item--actions--action comments--item--actions--vote-button">
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.0.0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" height="9" width="9">
+                    <path fill-rule="evenodd" fill="#CAC6C3" d="M0 9h9L4.302.066 0 9z"/>
+                </svg>
+            </span>
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.0.1"> 
+            </span>
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.0.2">7</span>
+        </a>
+        <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.1"></noscript>
+        <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2" ng-click="responding=!responding" class="comments--item--actions--action v-share">
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">Comment</span>
+        </a>
+        <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2" href="#" class="comments--item--actions--action v-share">
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">Translate</span>
+        </a>
+        <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.3"></noscript>
+        <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.4"></noscript>
+        <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.5"></noscript>
+        <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.6" href="https://www.producthunt.com/tech/gorails#comment-168056" class="comments--item--actions--action v-timestamp">
+            <time data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.6.0" datetime="2015-10-22T04:23:15.174-07:00">16 hours ago</time>
+        </a>
+    </div>
+
+    <div ng-if="responding">
+        <textarea class="new-reply" ng-model="text.commentResponse"></textarea>
+        <section class="post-detail--header--get-it-button">
+            <div class="post-get-it-button new-reply-button">
+                <a class="post-get-it-button--primary" target="_blank" ng-click="saveResponse()">Save</a>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<child-response ng-repeat="response in comment.responses" response="response"></child-response>
