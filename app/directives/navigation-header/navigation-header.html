@@ -9,7 +9,7 @@
                     </svg>
                 </span>
             </label>
-            <input class="header--search-form--field" data-search="input" id="search" placeholder="Search" type="text">
+            <input class="header--search-form--field" data-search="input" id="search" placeholder="{{ 'search' | translation: languageService.language }}" type="text">
             <a class="header--search-form--close" data-search="stop" href="#">
                 <span>
                     <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +27,6 @@
             </a>
         </span>
         <hr class="header--separator" data-reactid=".0.0.3">
-        <a class="header--login-button" data-reactid=".0.0.4">Login</a>
+        <a class="header--login-button" data-reactid=".0.0.4">{{ 'login' | translation: languageService.language }}</a>
     </div>
 </header>

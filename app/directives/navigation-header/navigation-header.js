@@ -1,4 +1,4 @@
-angular.module('linguo').directive('navigationHeader', ['LanguageService',function(LanguageService) {
+angular.module('linguo').directive('navigationHeader', ['LanguageService', function(LanguageService) {
 	function link(scope){
 		scope.languageService = LanguageService;
 	}
