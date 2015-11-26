@@ -5,7 +5,12 @@
 	  	<link rel="stylesheet" media="all" href="assets/css/thread.css">
 
 	  	<script src="bower_components/angular/angular.min.js"></script>
+	  	<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+	  	<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 
         <script src="app/app.js"></script>
         <script src="app/views/forum/ForumCtrl.js"></script>
@@ -19,6 +24,25 @@
         <script src="app/directives/navigation-header/navigation-header.js"></script>
         <script src="app/directives/comment-display/comment-display.js"></script>
         <script src="app/directives/child-response/child-response.js"></script>
+
+        <style>
+        .modal-backdrop.am-fade {
+          opacity: .5;
+          transition: opacity .15s linear;
+          &.ng-enter {
+            opacity: 0;
+            &.ng-enter-active {
+              opacity: .5;
+            }
+          }
+          &.ng-leave {
+            opacity: .5;
+            &.ng-leave-active {
+              opacity: 0;
+            }
+          }
+        }
+      </style>
 	</head>
 
 	<body class="categories-posts-index m-user-is-guest m-user-settings--thumbnails-enabled" ng-app="linguo">

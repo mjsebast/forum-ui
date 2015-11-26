@@ -28,10 +28,10 @@
         </a>
         <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.1"></noscript>
         <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2" ng-click="responding=!responding" class="comments--item--actions--action v-share">
-            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">Comment</span>
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">{{ 'comment' | translation: language }}</span>
         </a>
         <a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2" href="#" class="comments--item--actions--action v-share">
-            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">Translate</span>
+            <span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.2.1" class="label">{{ 'translate' | translation: language }}</span>
         </a>
         <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.3"></noscript>
         <noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.0.3.4"></noscript>
@@ -45,7 +45,7 @@
         <textarea class="new-reply" ng-model="text.commentResponse"></textarea>
         <section class="post-detail--header--get-it-button">
             <div class="post-get-it-button new-reply-button">
-                <a class="post-get-it-button--primary" target="_blank" ng-click="saveResponse()">Save</a>
+                <a class="post-get-it-button--primary" target="_blank" ng-click="saveResponse()">{{ 'submit' | translation: language }}</a>
             </div>
         </section>
     </div>

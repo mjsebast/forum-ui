@@ -1,0 +1,35 @@
+<div role="dialog" tabindex="-1" class="modal top am-fade-and-slide-top" style="display: block;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button ng-click="$hide()" class="close" type="button">×</button>
+				<h4 class="modal-title">
+					<span class="user-image">
+						<img height="30" width="30" ng-src="{{languageService.getLanguageImage(language)}}" width="45" ng-click="changeLanguage()"/>
+					</span>
+					Add Post
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<label for="url">Url</label>
+						<input type="text" class="form-control" id="url" ng-model="thread.url">
+					</div>
+					<div class="form-group">
+						<label for="title">Title</label>
+						<input type="text" class="form-control" id="title" ng-model="thread.content[language].title">
+					</div>
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea class="form-control" id="message" ng-model="thread.content[language].message"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button ng-click="$hide()" class="btn btn-default" type="button">Close</button> 
+				<button ng-click="saveThread()" class="btn btn-primary" type="button">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -11,13 +11,13 @@
         </a>
         <div class="post-item--thumbnail" style="background-image:url({{thread.image}}?x=260&amp;y=249);" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.1"></div>
         <div class="post-item--text" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2">
-            <a class="post-item--text--name" ng-click="openThread()" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.0">{{thread.title[language]}}</a>
+            <a class="post-item--text--name" ng-click="openThread()" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.0">{{thread.content[language].title}}</a>
             <span data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1">
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.0"></noscript>
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.1"></noscript>
             </span>
             <span class="post-item--text--tagline" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.2">
-                {{thread.user}}
+                {{thread.user.username}}
             </span>
         </div>
         <div>
@@ -26,7 +26,7 @@
                     <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
                 </span>
             </span>
-            <a class="post-item--action v-comments" href="#/thread/{{thread.id}}" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3">
+            <a class="post-item--action v-comments" ng-href="/thread/{{thread.id}}" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3">
                 <span data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3.0">
                     <svg width="19" height="17" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg">
                         <defs>

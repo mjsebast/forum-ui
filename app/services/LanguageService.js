@@ -17,7 +17,7 @@ angular.module('linguo').service('LanguageService', ['$rootScope', function($roo
 	}
 
 	this.getLanguageImage = function(language){
-		return 'assets/images/' + language + '.png';
+		return '/assets/images/' + language + '.png';
 	}
 	
 }]);
