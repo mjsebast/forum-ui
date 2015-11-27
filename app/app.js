@@ -1,4 +1,5 @@
-angular.module('linguo', ['ngRoute', 'mgcrea.ngStrap']).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('linguo', ['ngRoute', 'mgcrea.ngStrap', 'ngResource'])
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false

@@ -1,22 +1,19 @@
 <div>
     <div class="post-item v-category-tech v-with-image" data-action="open-modal" data-component="Emoji">
-        <a class="v-post-item post-vote-button v-category-tech" href="#">
+        <a class="v-post-item post-vote-button v-category-tech">
             <span class="post-vote-button--arrow">
-                <svg width="11" height="10" viewBox="0 0 11 10" xmlns="http://www.w3.org/2000/svg">
-                    <title>Rectangle 27</title>
-                    <path d="M.524 7.42C-.318 8.846.342 10 2 10h7c1.657 0 2.317-1.156 1.476-2.58L6.516.72c-.56-.95-1.473-.947-2.032 0l-3.96 6.7z" fill="#000" fill-rule="evenodd"></path>
-                </svg>
+                <i class="fa fa-sort-up"></i>
             </span>
             <span class="post-vote-button--count">395</span>
         </a>
-        <div class="post-item--thumbnail" style="background-image:url({{thread.image}}?x=260&amp;y=249);" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.1"></div>
-        <div class="post-item--text" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2">
-            <a class="post-item--text--name" ng-click="openThread()" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.0">{{thread.content[language].title}}</a>
-            <span data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1">
+        <div class="post-item--thumbnail" ng-show="thread.image" style="background-image:url({{thread.image}}?x=260&amp;y=249);"></div>
+        <div class="post-item--text">
+            <a class="post-item--text--name" ng-click="openThread()">{{thread.content[language].title}}</a>
+            <span>
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.0"></noscript>
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.1"></noscript>
             </span>
-            <span class="post-item--text--tagline" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.2">
+            <span class="post-item--text--tagline">
                 {{thread.user.username}}
             </span>
         </div>
@@ -26,30 +23,12 @@
                     <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
                 </span>
             </span>
-            <a class="post-item--action v-comments" ng-href="/thread/{{thread.id}}" data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3">
-                <span data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3.0">
-                    <svg width="19" height="17" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="b">
-                                <stop stop-color="#CCC" offset="0%"></stop>
-                                <stop stop-color="#BABABA" offset="100%"></stop>
-                            </linearGradient>
-                            <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="a">
-                                <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                                <feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.070000001 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-                                <feMerge>
-                                    <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <path d="M1.753 18.06C.66 16.996 0 15.623 0 14.125 0 10.742 3.358 8 7.5 8c4.142 0 7.5 2.742 7.5 6.125s-3.358 6.125-7.5 6.125c-1.03 0-2.01-.17-2.904-.476-1.46.845-4.318 1.962-4.318 1.962s.955-2.298 1.475-3.676z" transform="translate(2 -7)" filter="url(#a)" stroke="url(#b)" fill="#FFF" fill-rule="evenodd"></path>
-                    </svg>
+            <a class="post-item--action v-comments" ng-href="/thread/{{thread.id}}">
+                <span>
+                    <i class="fa fa-comment"></i>
                 </span>
-                <span data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.3.1">20</span>
             </a>
-            <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.3.4"></noscript>
+            <noscript></noscript>
         </div>
     </div>
 </div>

@@ -1,19 +1,20 @@
-angular.module('linguo').service('ThreadService', ['ForumService', function(ForumService){
-	this.language = 'en';
+angular.module('linguo').service('ThreadService', ['ForumService', 'ThreadResource', '$q', 
+	function(ForumService, ThreadResource, $q){
+	var thisService = this;	
 	this.thread = {};
 
 	this.findById = function(id){
+		var deferred = $q.defer();
 		if(this.thread.id==id){
-			return this.thread;
+			deferred.resolve();
 		}
 		else{
-			for(var i=0;i<ForumService.threads.length;i++){
-				if(ForumService.threads[i].id==id){
-					return ForumService.threads[i];
-				}
-			}
+			ThreadResource.get({id:id}, function(data){
+				thisService.thread = data;
+				deferred.resolve();
+			});
 		}
-		return {};
+		return deferred.promise;
 	};
 	
 }]);

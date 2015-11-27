@@ -12,7 +12,7 @@
                         <span class="user-image">
                             <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
                         </span>
-                        {{thread.message[language]}}
+                        {{thread.content[language].message}}
                     </div>
                     <div>
                         <textarea class="new-reply" ng-model="threadComment"></textarea>

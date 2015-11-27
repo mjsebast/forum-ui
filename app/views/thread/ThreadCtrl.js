@@ -1,7 +1,9 @@
 angular.module('linguo').controller('ThreadCtrl', ['$scope', 'LanguageService', 'ThreadService', '$routeParams',
 	function($scope, LanguageService, ThreadService, $routeParams){
 
-	$scope.thread = ThreadService.findById($routeParams.id);
+	ThreadService.findById($routeParams.id).then(function(){
+		$scope.thread = ThreadService.thread;
+	});
 
 	$scope.language = LanguageService.language;
 	$scope.languageService = LanguageService;
