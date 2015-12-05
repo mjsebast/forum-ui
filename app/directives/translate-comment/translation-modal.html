@@ -1,0 +1,38 @@
+<div role="dialog" tabindex="-1" class="modal top am-fade-and-slide-top" style="display: block;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button ng-click="$hide()" class="close" type="button">×</button>
+				<h4 class="modal-title">
+					<span class="user-image">
+						<img height="30" width="30" ng-src="{{languageService.getLanguageImage(comment.language)}}" width="45"/>
+					</span>
+					{{comment.content[comment.language].message}}
+				</h4>
+			</div>
+			<div class="modal-header">
+				<h4 class="modal-title">
+					<span class="user-image">
+						<img height="30" width="30" ng-src="{{languageService.getLanguageImage(translationLanguage)}}" width="45"/>
+					</span>
+					{{comment.content[translationLanguage].message}}
+				</h4>
+
+				<button class="btn btn-primary" type="button">Edit Translation</button>
+			</div>
+			<div class="modal-body">
+				Other translations
+				<!--form role="form">
+					<div class="form-group">
+						<label for="message">{{ 'message' | translation: language }}</label>
+						<textarea class="form-control" id="message" ng-model="text.reply"></textarea>
+					</div>
+				</form-->
+			</div>
+			<!--div class="modal-footer">
+				<button ng-click="$hide()" class="btn btn-default" type="button">{{ 'cancel' | translation: language }}</button> 
+				<button ng-click="saveReply()" class="btn btn-primary" type="button">{{ 'submit' | translation: language }}</button>
+			</div-->
+		</div>
+	</div>
+</div>

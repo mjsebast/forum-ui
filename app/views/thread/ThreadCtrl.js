@@ -1,5 +1,5 @@
-angular.module('linguo').controller('ThreadCtrl', ['$scope', 'LanguageService', 'ThreadService', '$routeParams',
-	function($scope, LanguageService, ThreadService, $routeParams){
+angular.module('linguo').controller('ThreadCtrl', ['$scope', 'LanguageService', 'ThreadService', '$routeParams', 'CommentResource',
+	function($scope, LanguageService, ThreadService, $routeParams, CommentResource){
 
 	ThreadService.findById($routeParams.id).then(function(){
 		$scope.thread = ThreadService.thread;
@@ -18,12 +18,24 @@ angular.module('linguo').controller('ThreadCtrl', ['$scope', 'LanguageService', 
 
 	$scope.saveComment = function(){
 		var comment = {
-			comment: {}
+			threadId: $routeParams.id,
+			language: $scope.language,
+			content: {}
 		};
-		comment.comment[$scope.language] = $scope.threadComment;
+		comment.content[$scope.language] = {
+			message: $scope.threadComment
+		};
+		CommentResource.save(comment, function(data){
+			$scope.threadComment = '';
+			$scope.getComments();
+		});
+	};
 
-		$scope.thread.responses.unshift(comment);
-		$scope.threadComment = null;
-	}
+	$scope.getComments = function(){
+		CommentResource.get({threadId: $routeParams.id}, function(data){
+			$scope.comments = data.content;
+		});
+	};
+	$scope.getComments();
 
 }]);

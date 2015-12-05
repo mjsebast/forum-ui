@@ -21,7 +21,7 @@ angular.module('linguo').controller('ForumCtrl', [
   	};
 
 	$scope.getThreads = function(){
-		ThreadResource.get({}, function(data){
+		ThreadResource.get({sort:'id', 'id.dir': 'desc'}, function(data){
 			$scope.threads = data.content;
 		});
 	};

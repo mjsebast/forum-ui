@@ -1,4 +1,5 @@
-angular.module('linguo').directive('commentDisplay', ['LanguageService', function(LanguageService) {
+angular.module('linguo').directive('commentDisplay', ['LanguageService', '$modal', 'CommentResource',
+	function(LanguageService, $modal, CommentResource) {
 	function link(scope){
 		scope.language = LanguageService.language;
 		scope.languageService = LanguageService;
@@ -13,13 +14,27 @@ angular.module('linguo').directive('commentDisplay', ['LanguageService', functio
 			scope.language = LanguageService.language;
 		});
 
-		scope.saveResponse = function(){
-			var response = {
-				comment: {}
+		var addCommentModal = $modal({scope: scope, templateUrl: '/app/views/add-comment/add-comment.html', show: false});
+  
+  		scope.addCommentModal = function() {
+  			scope.text.reply = '';
+    		addCommentModal.$promise.then(addCommentModal.show);
+  		};
+
+		scope.saveReply = function(){
+			var reply = {
+				threadId: scope.comment.threadId,
+				language: scope.language,
+				parentId: scope.comment.id,
+				content: {}
 			};
-			response.comment[scope.language] = scope.text.commentResponse;
-			scope.comment.responses.unshift(response);
-		}
+			reply.content[scope.language] = {
+				message: scope.text.reply
+			};
+			CommentResource.save(reply, function(data){
+				console.log(data);
+			});
+		};
 
 	}
 	return {
