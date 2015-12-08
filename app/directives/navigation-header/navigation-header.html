@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header navbar-fixed-top navbar navbar-default">
     <div class="container">
         <form class="header--search-form">
             <label class="header--search-form--label" for="search">
@@ -20,7 +20,7 @@
         </form>
         <span class="header--logo">
             <span class="user-image">
-                <img height="45" ng-src="{{languageService.getLanguageImage(languageService.language)}}" width="45" ng-click="languageService.changeGlobalLanguage()"/>
+                <img height="45" width="45" ng-src="{{languageService.getLanguageImage(languageService.language)}}"  ng-click="languageService.changeGlobalLanguage()"/>
             </span>
             <a href="/">
                 <h1 class="header--logo--title">Linguo</h1>

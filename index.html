@@ -25,6 +25,7 @@
 
         <script src="app/resources/ThreadResource.js"></script>
         <script src="app/resources/CommentResource.js"></script>
+        <script src="app/resources/CommentTranslationResource.js"></script>
         <script src="app/directives/thread-summary/thread-summary.js"></script>
         <script src="app/directives/translate-comment/translate-comment.js"></script>
         <script src="app/directives/thread-hero/thread-hero.js"></script>
@@ -49,13 +50,16 @@
             }
           }
         }
+        .m-t-70{
+          margin-top: 70px;
+        }
       </style>
 	</head>
 
 	<body class="categories-posts-index m-user-is-guest m-user-settings--thumbnails-enabled" ng-app="linguo">
 		<navigation-header></navigation-header>
 	  	
-	  	<main class="page-main">
+	  	<main class="page-main m-t-70">
 		    <div class="main-content">
 		    	<div ng-view></div>
 		    </div>

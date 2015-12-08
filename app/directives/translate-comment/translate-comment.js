@@ -1,5 +1,5 @@
-angular.module('linguo').directive('translateComment', ['LanguageService', '$modal',
-	function(LanguageService, $modal) {
+angular.module('linguo').directive('translateComment', ['LanguageService', '$modal', 'CommentTranslationResource',
+	function(LanguageService, $modal, CommentTranslationResource) {
 	function link(scope){
 		scope.language = LanguageService.language;
 		scope.languageService = LanguageService;
@@ -9,6 +9,9 @@ angular.module('linguo').directive('translateComment', ['LanguageService', '$mod
   
   		scope.translationModal = function() {
     		addTranslationModal.$promise.then(addTranslationModal.show);
+    		CommentTranslationResource.get({commentId: scope.comment.id}, function(data){
+    			scope.translations = data.content;
+    		});
   		};
 
 	}
