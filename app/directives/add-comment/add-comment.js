@@ -35,6 +35,7 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 				message: scope.text.reply
 			};
 			CommentResource.save(reply, function(data){
+				scope.$emit('comment-added-' + reply.parentId, data);
 				addCommentModal.hide();
 			});
 		};

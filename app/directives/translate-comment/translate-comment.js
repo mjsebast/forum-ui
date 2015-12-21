@@ -1,6 +1,7 @@
-angular.module('linguo').directive('translateComment', ['$modal', 'CommentTranslationResource', 'CommentTranslationVoteResource',
-	function($modal, CommentTranslationResource, CommentTranslationVoteResource) {
+angular.module('linguo').directive('translateComment', ['LanguageService', '$modal', 'CommentTranslationResource', 'CommentTranslationVoteResource',
+	function(LanguageService, $modal, CommentTranslationResource, CommentTranslationVoteResource) {
 	function link(scope){
+		scope.languageService = LanguageService;
 		scope.translationLanguage = (scope.comment.language=="en")?"es":"en";
 		scope.translate = {};
 
