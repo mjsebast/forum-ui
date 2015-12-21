@@ -1,44 +1,38 @@
 <div class="comments--item--replies">
 	<div>
-		<div class="comments--item" id="comment-168105" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0">
-			<a class="user-image comments--item--user-image" data-popover-position="top-center" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.0">
-				<span class="user-image" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.0.0">
+		<div class="comments--item">
+			<a class="user-image comments--item--user-image" data-popover-position="top-center">
+				<span class="user-image">
 					<img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
 				</span>
 			</a>
-			<div class="comments--item--heading" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.1">
-				<span class="comments--item--heading--name" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.1.0">Taylor Crane</span>
-				<span class="comments--item--heading--title" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.1.1">
-					<span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.1.1.0">— </span>
-					<span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.1.1.1">Product Manager, Originate</span>
-				</span>
+			<div class="comments--item--heading">
+				<span class="comments--item--heading--name">{{response.user.username}}</span>
 			</div>
-			<div class="comments--item--body" data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.2">
+			<div class="comments--item--body">
 				{{response.content[language].message}}
 			</div>
 
-			<div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3" class="comments--item--actions">
-				<a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.0"  data-popover="hover" class="comments--item--actions--action comments--item--actions--vote-button">
-					<span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.0.0">
+			<div class="comments--item--actions">
+				<a data-popover="hover" class="comments--item--actions--action comments--item--actions--vote-button">
+					<span>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" height="9" width="9">
 							<path fill-rule="evenodd" fill="#CAC6C3" d="M0 9h9L4.302.066 0 9z"/>
 						</svg>
 					</span>
-					<span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.0.1"> </span>
-					<span data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.0.2">2</span>
+					<span> </span>
+					<span>2</span>
 				</a>
-				<noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.1"></noscript>
-				<a class="comments--item--actions--action v-share">
-					<span class="label">Comment</span>
-				</a>
-				<a class="comments--item--actions--action v-share">
-					<span class="label">Translate</span>
-				</a>
-				<noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.3"></noscript>
-				<noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.4"></noscript>
-				<noscript data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.5"></noscript>
-				<a data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.6" class="comments--item--actions--action v-timestamp">
-					<time data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056.1.$168105.0.3.6.0" datetime="2015-10-22T06:59:18.269-07:00">13 hours ago</time>
+				<noscript></noscript>
+
+        		<add-comment comment="response" language="language"></add-comment>
+        		<translate-comment comment="response" language="language"></translate-comment>
+				
+				<noscript></noscript>
+				<noscript></noscript>
+				<noscript></noscript>
+				<a class="comments--item--actions--action v-timestamp">
+					<time datetime="2015-10-22T06:59:18.269-07:00">13 hours ago</time>
 				</a>
 			</div>	
 		</div>

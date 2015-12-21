@@ -4,15 +4,14 @@
             <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
         </span>
     </a>
-    <div  class="comments--item--heading">
+    <div class="comments--item--heading">
         <span class="comments--item--heading--name">{{comment.user.username}}</span>
     </div>
     <div  class="comments--item--body">
         {{comment.content[language].message}}
     </div>
     <div class="comments--item--actions">
-        <a href="#" data-popover-href="/comments/168056/votes" 
-        data-popover="hover" class="comments--item--actions--action comments--item--actions--vote-button">
+        <a href="#" class="comments--item--actions--action comments--item--actions--vote-button">
             <span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" height="9" width="9">
                     <path fill-rule="evenodd" fill="#CAC6C3" d="M0 9h9L4.302.066 0 9z"/>
@@ -23,13 +22,8 @@
             <span>7</span>
         </a>
         <noscript></noscript>
-        <a ng-click="addCommentModal()" class="comments--item--actions--action v-share">
-            <span style="color:#337ab7" class="label">{{ 'comment' | translation: language }}</span>
-        </a>
-        <!--a href="#" class="comments--item--actions--action v-share">
-            <span style="color:#337ab7" class="label">{{ 'translate' | translation: language }}</span>
-        </a-->
-        <translate-comment comment="comment"></translate-comment>
+        <add-comment comment="comment" language="language"></add-comment>
+        <translate-comment comment="comment" language="language"></translate-comment>
         <noscript></noscript>
         <noscript></noscript>
         <noscript></noscript>

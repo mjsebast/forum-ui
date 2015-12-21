@@ -27,11 +27,11 @@
 							</span>
 							Translation
 						</label>
-						<textarea ng-model="userTranslation" id="message" class="form-control"></textarea>
+						<textarea ng-model="translate.userTranslation" id="message" class="form-control"></textarea>
 					</div>
 
 					<button ng-click="showTranslationBox = false" class="btn btn-default" type="button">{{ 'cancel' | translation: language }}</button> 
-					<button class="btn btn-primary" type="button">{{ 'submit' | translation: language }}</button>
+					<button class="btn btn-primary" ng-click="submitTranslation()" type="button">{{ 'submit' | translation: language }}</button>
 				</form>
 			</div>
 			<div class="modal-body">
@@ -48,31 +48,20 @@
 				        {{translation.message}}
 				    </div>
 				    <div class="comments--item--actions">
-				        <a href="#" data-popover-href="/comments/168056/votes" 
-				        data-popover="hover" class="comments--item--actions--action comments--item--actions--vote-button">
-				            <span>
-				                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" height="9" width="9">
-				                    <path fill-rule="evenodd" fill="#CAC6C3" d="M0 9h9L4.302.066 0 9z"/>
-				                </svg>
-				            </span>
-				            <span> 
-				            </span>
-				            <span>7</span>
+				        <a href="#" ng-click="vote(translation, 1)" class="comments--item--actions--action comments--item--actions--vote-button">
+				            <i class="fa fa-sort-up fa-2x" ng-class="{'upvoted': translation.userVote==1}"></i>
 				        </a>
-				        <noscript></noscript>
-				        <noscript></noscript>
-				        <noscript></noscript>
-				        <noscript></noscript>
+				        <a href="#" ng-click="vote(translation, -1)" class="comments--item--actions--action comments--item--actions--vote-button">
+				            <i class="fa fa-sort-down fa-2x" ng-class="{'downvoted': translation.userVote==-1}"></i>
+				        </a>
+
+				        <span>{{translation.points}}</span>
 				        <a class="comments--item--actions--action v-timestamp">
 				            <time datetime="2015-10-22T04:23:15.174-07:00">16 hours ago</time>
 				        </a>
 				    </div>
 				</div>
 			</div>
-			<!--div class="modal-footer">
-				<button ng-click="$hide()" class="btn btn-default" type="button">{{ 'cancel' | translation: language }}</button> 
-				<button ng-click="saveReply()" class="btn btn-primary" type="button">{{ 'submit' | translation: language }}</button>
-			</div-->
 		</div>
 	</div>
 </div>
