@@ -11,16 +11,10 @@
         {{comment.content[language].message}}
     </div>
     <div class="comments--item--actions">
-        <a href="#" class="comments--item--actions--action comments--item--actions--vote-button">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" height="9" width="9">
-                    <path fill-rule="evenodd" fill="#CAC6C3" d="M0 9h9L4.302.066 0 9z"/>
-                </svg>
-            </span>
-            <span> 
-            </span>
-            <span>7</span>
+        <a href="#" ng-click="vote(1)" class="comments--item--actions--action comments--item--actions--vote-button">
+            <i ng-class="{'upvoted': comment.userVote==1}" class="fa fa-sort-up fa-2x"></i>
         </a>
+        <span>{{comment.points}}</span>
         <noscript></noscript>
         <add-comment comment="comment" language="language"></add-comment>
         <translate-comment comment="comment" language="language"></translate-comment>

@@ -1,4 +1,4 @@
-angular.module('linguo').directive('childResponse', ['LanguageService', function(LanguageService) {
+angular.module('linguo').directive('childResponse', ['LanguageService', 'CommentVoteResource', function(LanguageService, CommentVoteResource) {
 	function link(scope){
 		scope.language = LanguageService.language;
 		scope.languageService = LanguageService;
@@ -10,6 +10,24 @@ angular.module('linguo').directive('childResponse', ['LanguageService', function
 		scope.$on(LanguageService.languageChanged, function(){
 			scope.language = LanguageService.language;
 		});
+
+		scope.vote = function(vote){
+			if(scope.response.userVote==vote){
+				scope.response.userVote = 0;
+                scope.response.points -= 1;
+			}
+			else{
+				scope.response.points +=1;
+				scope.response.userVote = vote;
+			}
+            var json = {
+                id: scope.response.id,
+                vote: scope.response.userVote
+            }
+            CommentVoteResource.save(json, function(){
+
+            });
+		};
 
 	}
 	return {

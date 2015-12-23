@@ -22,7 +22,7 @@ angular.module('linguo').directive('translateComment', ['LanguageService', '$mod
                         translation.points += 1;
                     }else{
                         translation.points -=1;
-                    }
+                    } 
                 } else{
                     if(vote==1){
                         translation.points += 2;
