@@ -14,15 +14,18 @@
                         </span>
                         {{thread.content[language].message}}
                     </div>
-                    <div>
-                        <textarea class="new-reply" ng-model="threadComment"></textarea>
-                        <section class="post-detail--header--get-it-button">
-                            <div class="post-get-it-button new-reply-button">
-                                <a class="post-get-it-button--primary" target="_blank" ng-click="saveComment()">Save</a>
-                            </div>
-                        </section>
+                    <div class="row">
+                        <div class="col-xs-offset-3 col-xs-2">
+                            <add-comment language="language" thread="thread" show-button="true"></add-comment>
+                        </div>
+                        <!--div class="col-xs-offset-1 col-xs-2">
+                            <section class="post-detail--header--get-it-button">
+                                <div class="post-get-it-button new-reply-button">
+                                    <a class="post-get-it-button--primary" target="_blank">{{ 'translate' | translation: language }}</a>
+                                </div>
+                            </section>
+                        </div-->
                     </div>
-
 
                     <div data-reactid=".2.1.1.0.4.0">
                         <section class="section comments--discussion" data-reactid=".2.1.1.0.4.0.0">

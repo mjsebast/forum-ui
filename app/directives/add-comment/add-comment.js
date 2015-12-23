@@ -20,22 +20,49 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
     		addCommentModal.$promise.then(addCommentModal.show);
   		};
 
+  		scope.getMessage = function(){
+  			if(scope.parentComment){
+  				return scope.parentComment.content[scope.language].message;
+  			}
+  			else if(scope.thread && scope.thread.content[scope.language]){
+  				return scope.thread.content[scope.language].message;
+  			}
+  			else if(scope.thread){
+  				return scope.thread.title[scope.language].message;
+  			} 
+  		}
+
 		scope.saveReply = function(){
 			var reply = {
-				threadId: scope.comment.threadId,
 				language: scope.language,
-				parentId: scope.comment.id,
 				content: {}
 			};
-			if(scope.comment.parentId){
-				reply.parentId = scope.comment.parentId;
+
+			if(scope.thread){
+				reply.threadId = scope.thread.id;
+			}
+			else{
+				reply.threadId = scope.parentComment.threadId;
+			}
+
+			if(scope.parentComment && scope.parentComment.id){
+				reply.parentId = scope.parentComment.id;
+			}
+			else if(scope.parentComment && scope.parentComment.parentId){
+				reply.parentId = scope.parentComment.parentId;
 			}
 
 			reply.content[scope.language] = {
 				message: scope.text.reply
 			};
 			CommentResource.save(reply, function(data){
-				scope.$emit('comment-added-' + reply.parentId, data);
+				if(reply.parentId){
+					scope.$emit('comment-added-' + reply.parentId, data);
+				}
+				else{
+					scope.$emit('thread-comment-added', data);
+				}
+				
 				addCommentModal.hide();
 			});
 		};
@@ -44,7 +71,9 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 	return {
 		link: link,
         scope: {
-            'comment': '=',
+            'thread': '=',
+            'parentComment': '=',
+            'showButton': '=',
             'language': '=?'
         },
 		templateUrl: '/app/directives/add-comment/add-comment.html'

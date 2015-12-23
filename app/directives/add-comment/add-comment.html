@@ -1,3 +1,5 @@
-<a ng-click="addCommentModal()" href="#" class="comments--item--actions--action v-share">
+<a ng-click="addCommentModal()" ng-show="!showButton" href="#" class="comments--item--actions--action v-share">
     <span style="color:#337ab7" class="label">{{ 'comment' | translation: language }}</span>
 </a>
+
+<button class="btn btn-primary" ng-show="showButton" ng-click="addCommentModal()">{{ 'comment' | translation: language }}</button>

@@ -16,6 +16,10 @@ angular.module('linguo').controller('ThreadCtrl', ['$scope', 'LanguageService', 
 		$scope.language = LanguageService.language;
 	});
 
+	$scope.$on('thread-comment-added', function(event, newChild){
+		$scope.comments.push(newChild);
+	});
+
 	$scope.saveComment = function(){
 		var comment = {
 			threadId: $routeParams.id,
