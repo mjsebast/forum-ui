@@ -1,7 +1,7 @@
 <div data-react-class="FeaturedFeed">
 	<div class="row">
 		<div class="col-md-9">
-			<button class="btn btn-primary pull-right" ng-click="addThreadModal()">{{ 'submit_post' | translation: language }}</button>
+			<button class="btn btn-primary pull-right" ng-click="addPostModal()">{{ 'submit_post' | translation: language }}</button>
 		</div>
 		
 	</div>
@@ -11,8 +11,8 @@
 				<div class="day v-category-tech">
 					<div class="container">
 						<ul class="posts--group v-category-tech">
-							<li ng-repeat="thread in threads">
-								<thread-summary thread="thread"></thread-summary>
+							<li ng-repeat="post in posts">
+								<post-summary post="post"></post-summary>
 							</li>
 						</ul>
 					</div>

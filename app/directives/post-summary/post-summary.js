@@ -1,4 +1,4 @@
-angular.module('linguo').directive('threadSummary', ['ThreadService', 'LanguageService', '$location', function(ThreadService, LanguageService, $location) {
+angular.module('linguo').directive('postSummary', ['PostService', 'LanguageService', '$location', function(PostService, LanguageService, $location) {
 	function link(scope){
 		scope.language = LanguageService.language;
 		scope.languageService = LanguageService;
@@ -11,17 +11,17 @@ angular.module('linguo').directive('threadSummary', ['ThreadService', 'LanguageS
 			scope.language = LanguageService.language;
 		});
 
-		scope.openThread = function(){
-			ThreadService.thread = scope.thread;
-			$location.path('/thread/' + scope.thread.id);
+		scope.openPost = function(){
+			PostService.post = scope.post;
+			$location.path('/post/' + scope.post.id);
 		}
 
 	}
 	return {
 		link: link,
         scope: {
-            'thread': '='
+            'post': '='
         },
-		templateUrl: '/app/directives/thread-summary/thread-summary.html'
+		templateUrl: '/app/directives/post-summary/post-summary.html'
 	};
 }]);

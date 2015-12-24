@@ -1,6 +1,6 @@
 angular.module('linguo').controller('ForumCtrl', [
-	'$scope', 'ForumService', '$modal', 'LanguageService', 'ThreadResource', 
-	function($scope, ForumService, $modal, LanguageService, ThreadResource){
+	'$scope', 'ForumService', '$modal', 'LanguageService', 'PostResource',
+	function($scope, ForumService, $modal, LanguageService, PostResource){
 	
 	$scope.language = LanguageService.language;
 	$scope.languageService = LanguageService;
@@ -13,31 +13,31 @@ angular.module('linguo').controller('ForumCtrl', [
 		$scope.language = LanguageService.language;
 	});
 
-	var addThreadModal = $modal({scope: $scope, templateUrl: '/app/views/add-thread/add-thread.html', show: false});
+	var addPostModal = $modal({scope: $scope, templateUrl: '/app/views/add-post/add-post.html', show: false});
   
-  	$scope.addThreadModal = function() {
-  		$scope.thread = {};
-    	addThreadModal.$promise.then(addThreadModal.show);
+  	$scope.addPostModal = function() {
+  		$scope.post = {};
+    	addPostModal.$promise.then(addPostModal.show);
   	};
 
-	$scope.getThreads = function(){
-		ThreadResource.get({sort:'id', 'id.dir': 'desc'}, function(data){
-			$scope.threads = data.content;
+	$scope.getPosts = function(){
+		PostResource.get({sort:'id', 'id.dir': 'desc'}, function(data){
+			$scope.posts = data.content;
 		});
 	};
 
-	$scope.saveThread = function(){
+	$scope.savePost = function(){
 		var content = {};
-		content[$scope.language] = $scope.thread.content[$scope.language];
-		$scope.thread.content = content;
-		$scope.thread.language = $scope.language;
+		content[$scope.language] = $scope.post.content[$scope.language];
+		$scope.post.content = content;
+		$scope.post.language = $scope.language;
 
-		ThreadResource.save($scope.thread, function(){
-			$scope.getThreads();
-			addThreadModal.hide();
+		PostResource.save($scope.post, function(){
+			$scope.getPosts();
+			addPostModal.hide();
 		});
 
 	};
-	$scope.getThreads();
+	$scope.getPosts();
 
 }]);

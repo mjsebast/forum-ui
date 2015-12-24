@@ -6,15 +6,15 @@
             </span>
             <span class="post-vote-button--count">395</span>
         </a>
-        <div class="post-item--thumbnail" ng-show="thread.image" style="background-image:url({{thread.image}}?x=260&amp;y=249);"></div>
+        <div class="post-item--thumbnail" ng-show="post.image" style="background-image:url({{post.image}}?x=260&amp;y=249);"></div>
         <div class="post-item--text">
-            <a class="post-item--text--name" ng-click="openThread()">{{thread.content[language].title}}</a>
+            <a class="post-item--text--name" ng-click="openPost()">{{post.content[language].title}}</a>
             <span>
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.0"></noscript>
                 <noscript data-reactid=".3.0.0:$0.0.2.0.$31105.0.0.2.1.1"></noscript>
             </span>
             <span class="post-item--text--tagline">
-                {{thread.user.username}}
+                {{post.user.username}}
             </span>
         </div>
         <div>
@@ -23,7 +23,7 @@
                     <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
                 </span>
             </span>
-            <a class="post-item--action v-comments" ng-href="/thread/{{thread.id}}">
+            <a class="post-item--action v-comments" ng-href="/post/{{post.id}}">
                 <span>
                     <i class="fa fa-comment"></i>
                 </span>

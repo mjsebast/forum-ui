@@ -24,11 +24,11 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
   			if(scope.parentComment){
   				return scope.parentComment.content[scope.language].message;
   			}
-  			else if(scope.thread && scope.thread.content[scope.language]){
-  				return scope.thread.content[scope.language].message;
+  			else if(scope.post && scope.post.content[scope.language]){
+  				return scope.post.content[scope.language].message;
   			}
-  			else if(scope.thread){
-  				return scope.thread.title[scope.language].message;
+  			else if(scope.post){
+  				return scope.post.title[scope.language].message;
   			} 
   		}
 
@@ -38,11 +38,11 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 				content: {}
 			};
 
-			if(scope.thread){
-				reply.threadId = scope.thread.id;
+			if(scope.post){
+				reply.postId = scope.post.id;
 			}
 			else{
-				reply.threadId = scope.parentComment.threadId;
+				reply.postId = scope.parentComment.postId;
 			}
 
 			if(scope.parentComment && scope.parentComment.id){
@@ -60,7 +60,7 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 					scope.$emit('comment-added-' + reply.parentId, data);
 				}
 				else{
-					scope.$emit('thread-comment-added', data);
+					scope.$emit('post-comment-added', data);
 				}
 				
 				addCommentModal.hide();
@@ -71,7 +71,7 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 	return {
 		link: link,
         scope: {
-            'thread': '=',
+            'post': '=',
             'parentComment': '=',
             'showButton': '=',
             'language': '=?'

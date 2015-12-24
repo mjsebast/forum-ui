@@ -14,21 +14,21 @@
 				<form role="form">
 					<div class="form-group">
 						<label for="url">{{ 'url' | translation: language }}</label>
-						<input type="text" class="form-control" id="url" ng-model="thread.url">
+						<input type="text" class="form-control" id="url" ng-model="post.url">
 					</div>
 					<div class="form-group">
 						<label for="title">{{ 'title' | translation: language }}</label>
-						<input type="text" class="form-control" id="title" ng-model="thread.content[language].title">
+						<input type="text" class="form-control" id="title" ng-model="post.content[language].title">
 					</div>
 					<div class="form-group">
 						<label for="message">{{ 'message' | translation: language }}</label>
-						<textarea class="form-control" id="message" ng-model="thread.content[language].message"></textarea>
+						<textarea class="form-control" id="message" ng-model="post.content[language].message"></textarea>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button ng-click="$hide()" class="btn btn-default" type="button">{{ 'cancel' | translation: language }}</button> 
-				<button ng-click="saveThread()" class="btn btn-primary" type="button">{{ 'submit' | translation: language }}</button>
+				<button ng-click="savePost()" class="btn btn-primary" type="button">{{ 'submit' | translation: language }}</button>
 			</div>
 		</div>
 	</div>
