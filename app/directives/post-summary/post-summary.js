@@ -1,4 +1,5 @@
-angular.module('linguo').directive('postSummary', ['PostService', 'LanguageService', '$location', function(PostService, LanguageService, $location) {
+angular.module('linguo').directive('postSummary', ['PostService', 'LanguageService', '$location', 'PostVoteResource',
+    function(PostService, LanguageService, $location, PostVoteResource) {
 	function link(scope){
 		scope.language = LanguageService.language;
 		scope.languageService = LanguageService;
@@ -16,6 +17,23 @@ angular.module('linguo').directive('postSummary', ['PostService', 'LanguageServi
 			$location.path('/post/' + scope.post.id);
 		}
 
+		scope.vote = function(vote){
+            if(scope.post.userVote==vote){
+                scope.post.userVote = 0;
+                scope.post.points -= 1;
+            }
+            else{
+                scope.post.points +=1;
+                scope.post.userVote = vote;
+            }
+            var json = {
+                id: scope.post.id,
+                vote: scope.post.userVote
+            }
+            PostVoteResource.save(json, function(){
+
+            });
+        };
 	}
 	return {
 		link: link,

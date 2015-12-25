@@ -11,23 +11,10 @@
 			</h1>
 		</div>
 		<div class="post-detail--header--upvote-and-get-it-buttons">
-			<section class="post-detail--header--upvote-button">
-				<a class="post-vote-button v-bordered v-category-tech" href="#">
-					<span class="post-vote-button--arrow">
-						<svg width="11" height="10" viewBox="0 0 11 10" xmlns="http://www.w3.org/2000/svg">
-							<title>Rectangle 27</title>
-							<path d="M.524 7.42C-.318 8.846.342 10 2 10h7c1.657 0 2.317-1.156 1.476-2.58L6.516.72c-.56-.95-1.473-.947-2.032 0l-3.96 6.7z" fill="#000" fill-rule="evenodd"></path>
-						</svg>
-					</span>
-					<span class="post-vote-button--count">147</span>
-				</a>
-			</section>
+			<button class="btn btn-secondary" ng-class="{'upvoted': post.userVote==1, 'novoted':post.userVote!=1}" ng-click="vote(1)">
+                <i class="fa fa-sort-up"></i> {{ post.points}}
+			</button>
 			<translate-post-title post="post" language="language"></translate-post-title>
-			<!--section class="post-detail--header--get-it-button">
-				<div class="post-get-it-button">
-					<a class="post-get-it-button--primary" target="_blank">Translate</a>
-				</div>
-			</section-->
 		</div>
 	</div>
 </header>

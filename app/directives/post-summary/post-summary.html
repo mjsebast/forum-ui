@@ -1,10 +1,10 @@
 <div>
     <div class="post-item v-category-tech v-with-image" data-action="open-modal" data-component="Emoji">
-        <a class="v-post-item post-vote-button v-category-tech">
+        <a class="v-post-item post-vote-button v-category-tech" ng-click="vote(1)" ng-class="{'upvoted': post.userVote==1}">
             <span class="post-vote-button--arrow">
                 <i class="fa fa-sort-up"></i>
             </span>
-            <span class="post-vote-button--count">395</span>
+            <span class="post-vote-button--count">{{post.points}}</span>
         </a>
         <div class="post-item--thumbnail" ng-show="post.image" style="background-image:url({{post.image}}?x=260&amp;y=249);"></div>
         <div class="post-item--text">
