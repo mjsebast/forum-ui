@@ -1,0 +1,67 @@
+<div role="dialog" tabindex="-1" class="modal top am-fade-and-slide-top" style="display: block;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button ng-click="$hide()" class="close" type="button">×</button>
+				<h4 class="modal-title">
+					<span class="user-image">
+						<img height="30" width="30" ng-src="{{languageService.getLanguageImage(post.language)}}" width="45"/>
+					</span>
+					{{post.content[post.language].message}}
+				</h4>
+			</div>
+			<div class="modal-header">
+				<h4 ng-show="!showTranslationBox" class="modal-title">
+					<span class="user-image">
+						<img height="30" width="30" ng-src="{{languageService.getLanguageImage(translationLanguage)}}" width="45"/>
+					</span>
+					{{post.content[translationLanguage].message}}
+					<br><br>
+					<a href="#" ng-click="showTranslationBox = true">Add Translation</a>
+				</h4>
+				<form ng-show="showTranslationBox" role="form">
+					<div  class="form-group">
+						<label for="message" class="ng-binding">
+							<span class="user-image">
+								<img height="30" width="30" ng-src="{{languageService.getLanguageImage(translationLanguage)}}" width="45"/>
+							</span>
+							Translation
+						</label>
+						<textarea ng-model="translate.userTranslation" id="message" class="form-control"></textarea>
+					</div>
+
+					<button ng-click="showTranslationBox = false" class="btn btn-default" type="button">{{ 'cancel' | translation: language }}</button> 
+					<button class="btn btn-primary" ng-click="submitTranslation()" type="button">{{ 'submit' | translation: language }}</button>
+				</form>
+			</div>
+			<div class="modal-body">
+				<div class="comments--item" ng-repeat="translation in translations">
+				    <a data-popover-position="top-center" class="user-image comments--item--user-image">
+				        <span class="user-image">
+				            <img height="30" ng-src="{{languageService.getLanguageImage(translationLanguage)}}" width="30"/>
+				        </span>
+				    </a>
+				    <div  class="comments--item--heading">
+				        <span class="comments--item--heading--name">{{translation.user.username}}</span>
+				    </div>
+				    <div  class="comments--item--body">
+				        {{translation.message}}
+				    </div>
+				    <div class="comments--item--actions">
+				        <a href="#" ng-click="vote(translation, 1)" class="comments--item--actions--action comments--item--actions--vote-button">
+				            <i class="fa fa-sort-up fa-2x" ng-class="{'upvoted': translation.userVote==1}"></i>
+				        </a>
+				        <a href="#" ng-click="vote(translation, -1)" class="comments--item--actions--action comments--item--actions--vote-button">
+				            <i class="fa fa-sort-down fa-2x" ng-class="{'downvoted': translation.userVote==-1}"></i>
+				        </a>
+
+				        <span>{{translation.points}}</span>
+				        <a class="comments--item--actions--action v-timestamp">
+				            <time datetime="2015-10-22T04:23:15.174-07:00">16 hours ago</time>
+				        </a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
