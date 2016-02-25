@@ -39,6 +39,6 @@ angular.module('linguo').directive('commentDisplay', ['LanguageService', 'Commen
         scope: {
             'comment': '='
         },
-		templateUrl: '/app/directives/comment-display/comment-display.html'
+		templateUrl: 'app/directives/comment-display/comment-display.html'
 	};
 }]);

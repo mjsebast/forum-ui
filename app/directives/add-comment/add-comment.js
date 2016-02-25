@@ -13,7 +13,7 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
 			scope.language = LanguageService.language;
 		});
 
-		var addCommentModal = $modal({scope: scope, templateUrl: '/app/directives/add-comment/add-comment-modal.html', show: false});
+		var addCommentModal = $modal({scope: scope, templateUrl: 'app/directives/add-comment/add-comment-modal.html', show: false});
   
   		scope.addCommentModal = function() {
   			scope.text.reply = '';
@@ -76,6 +76,6 @@ angular.module('linguo').directive('addComment', ['LanguageService', '$modal', '
             'showButton': '=',
             'language': '=?'
         },
-		templateUrl: '/app/directives/add-comment/add-comment.html'
+		templateUrl: 'app/directives/add-comment/add-comment.html'
 	};
 }]);

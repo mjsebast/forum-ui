@@ -5,7 +5,7 @@ angular.module('linguo').directive('translateComment', ['LanguageService', '$mod
         scope.translationLanguage = (scope.comment.language=="en")?"es":"en";
         scope.translate = {};
 
-        var addTranslationModal = $modal({scope: scope, templateUrl: '/app/directives/translate-comment/translation-modal.html', show: false});
+        var addTranslationModal = $modal({scope: scope, templateUrl: 'app/directives/translate-comment/translation-modal.html', show: false});
         
         scope.vote = function(translation, vote){
             if(translation.userVote==vote){
@@ -70,6 +70,6 @@ angular.module('linguo').directive('translateComment', ['LanguageService', '$mod
             'comment': '=',
             'language': '='
         },
-        templateUrl: '/app/directives/translate-comment/translate-comment.html'
+        templateUrl: 'app/directives/translate-comment/translate-comment.html'
     };
 }]);

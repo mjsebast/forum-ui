@@ -35,6 +35,6 @@ angular.module('linguo').directive('childResponse', ['LanguageService', 'Comment
         scope: {
             'response': '='
         },
-		templateUrl: '/app/directives/child-response/child-response.html'
+		templateUrl: 'app/directives/child-response/child-response.html'
 	};
 }]);

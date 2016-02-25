@@ -34,6 +34,6 @@ angular.module('linguo').directive('postHero', ['PostService', '$location', 'Lan
         scope: {
             'post': '='
         },
-		templateUrl: '/app/directives/post-hero/post-hero.html'
+		templateUrl: 'app/directives/post-hero/post-hero.html'
 	};
 }]);

@@ -4,6 +4,6 @@ angular.module('linguo', ['ngRoute', 'mgcrea.ngStrap', 'ngResource'])
 		enabled: true,
 		requireBase: false
 	});
-  	$routeProvider.when('/', {templateUrl: '/app/views/forum/forum.html', controller: 'ForumCtrl'})
-  		.when('/post/:id', {templateUrl: '/app/views/post/post.html', controller: 'PostCtrl'});
+  	$routeProvider.when('/', {templateUrl: 'app/views/forum/forum.html', controller: 'ForumCtrl'})
+  		.when('/post/:id', {templateUrl: 'app/views/post/post.html', controller: 'PostCtrl'});
 }])

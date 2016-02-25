@@ -5,6 +5,6 @@ angular.module('linguo').directive('navigationHeader', ['LanguageService', funct
 	return {
 		link: link,
 		restrict: 'E',
-		templateUrl: '/app/directives/navigation-header/navigation-header.html'
+		templateUrl: 'app/directives/navigation-header/navigation-header.html'
 	};
 }]);
