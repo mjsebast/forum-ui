@@ -1,3 +1,5 @@
+var apiRoot = 'http://api.linglobes.com:8080'
+
 angular.module('linguo', ['ngRoute', 'mgcrea.ngStrap', 'ngResource'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode({
