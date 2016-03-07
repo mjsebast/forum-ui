@@ -13,7 +13,7 @@ angular.module('linguo').controller('ForumCtrl', [
 		$scope.language = LanguageService.language;
 	});
 
-	var addPostModal = $modal({scope: $scope, templateUrl: 'app/views/add-post/add-post.html', show: false});
+	var addPostModal = $modal({scope: $scope, templateUrl: '/app/views/add-post/add-post.html', show: false});
   
   	$scope.addPostModal = function() {
   		$scope.post = {};

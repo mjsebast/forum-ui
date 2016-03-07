@@ -40,6 +40,6 @@ angular.module('linguo').directive('postSummary', ['PostService', 'LanguageServi
         scope: {
             'post': '='
         },
-		templateUrl: 'app/directives/post-summary/post-summary.html'
+		templateUrl: '/app/directives/post-summary/post-summary.html'
 	};
 }]);
