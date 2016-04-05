@@ -1,50 +1,44 @@
-<section class="post-detail v-category-tech">
-    <post-hero post="post"></post-hero>
-    <section class="post-detail--body" data-reactid=".2.1">
-        <section class="post-detail--body--content" data-reactid=".2.1.1">
-            <main data-reactid=".2.1.1.0">
-                <noscript data-reactid=".2.1.1.0.0"></noscript>
-                <noscript data-reactid=".2.1.1.0.1"></noscript>
+<div class="container">  
 
-                <div id="discussion" data-reactid=".2.1.1.0.4">
-                    
-                    <div class="thread-message">
-                        <span class="user-image">
-                            <img height="30" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
+    <div class="post-header">
+        <h1>
+            <a ng-if="post.url" ng-href="{{post.url}}" target="_blank">{{post.content[language].title}}</a>
+            <span ng-if="!post.url">{{post.content[language].title}}</span>
+        </h1>
+    </div>
+    <div class="thread-message text-center">
+        <span class="user-image">
+            <img height="30" class="language-switch" ng-src="{{languageService.getLanguageImage(language)}}" width="30" ng-click="changeLanguage()"/>
+        </span>
+        {{post.content[language].message}}
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-2">
+            <add-comment language="language" post="post" show-button="true"></add-comment>
+            <translate-post-content post="post" language="language"></translate-post-content>
+        </div>
+    </div>
+
+    <div>
+        <section>
+            <h3>discussion</h3>
+            <div>
+                <div>
+                    <a href="#" class="dropdown-toggle">
+                        <span>most upvoted</span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 5" height="5" width="8">
+                                <path fill-rule="evenodd" fill="#A8ACB3" d="M6.752 1.514C7.472.678 7.158 0 6.057 0H1.052C-.05 0-.332.654.426 1.46L2.38 3.54c.758.806 1.952.786 2.674-.054l1.698-1.972z"/>
+                            </svg>
                         </span>
-                        {{post.content[language].message}}
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-offset-3 col-xs-2">
-                            <add-comment language="language" post="post" show-button="true"></add-comment>
-                            <translate-post-content post="post" language="language"></translate-post-content>
+                    </a>
+                    <div>
+                        <div>
+                            <comment-display ng-repeat="comment in comments" comment="comment"></comment-display>
                         </div>
                     </div>
-
-                    <div data-reactid=".2.1.1.0.4.0">
-                        <section class="section comments--discussion" data-reactid=".2.1.1.0.4.0.0">
-                            <h3 class="section--heading" data-reactid=".2.1.1.0.4.0.0.0">discussion</h3>
-                            <div data-reactid=".2.1.1.0.4.0.0.1">
-                                <div class="comments--discussion--threads" data-reactid=".2.1.1.0.4.0.0.1.1">
-                                    <a data-reactid=".2.1.1.0.4.0.0.1.1.0" href="#" class="dropdown-toggle">
-                                        <span data-reactid=".2.1.1.0.4.0.0.1.1.0.0">most upvoted</span>
-                                        <span data-reactid=".2.1.1.0.4.0.0.1.1.0.1" class="dropdown-toggle--arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 5" height="5" width="8">
-                                                <path fill-rule="evenodd" fill="#A8ACB3" d="M6.752 1.514C7.472.678 7.158 0 6.057 0H1.052C-.05 0-.332.654.426 1.46L2.38 3.54c.758.806 1.952.786 2.674-.054l1.698-1.972z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <div data-reactid=".2.1.1.0.4.0.0.1.1.1">
-                                        <div data-reactid=".2.1.1.0.4.0.0.1.1.1.$168056">
-                                            <comment-display ng-repeat="comment in comments" comment="comment"></comment-display>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </section>
-                    </div>
                 </div>
-            </main>
+            </div> 
         </section>
-    </section>                                    
-</section>
+    </div>
+</div>
